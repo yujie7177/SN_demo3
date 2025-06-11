@@ -15,13 +15,13 @@ NeedModify.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         var sysId = this.getParameter('sysparm_sys_id');
         var reqItem = new GlideRecord('sc_req_item');
         reqItem.get(sysId);
-        reqItem.state = 2;
+        reqItem.state = -5;
         reqItem.update();
         var task = new GlideRecord('sc_task');
         task.initialize();
         task.short_description = 'More Info for your Request: ';
         task.description = 'The request need more info. Please modify the details in below link: \n\n' +
-            'https://dev319956.service-now.com/sp?id=sc_cat_item&sys_id=59f586f23731300054b6a3549dbe5db7&catitem_id=' + sysId;
+            'https://dev319956.service-now.com/sp?id=sc_cat_item&sys_id=3D3a0fb82ac315221079b2770d050131cf&catitem_id=' + sysId;
         task.assigned_to = reqItem.requested_for;
         task.task_type = 'task';
         task.insert();
@@ -33,13 +33,13 @@ NeedModify.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-11 07:04:33</sys_created_on>
         <sys_id>e40bfaf5c3ce2e1079b2770d05013168</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>NeedModify</sys_name>
         <sys_package display_value="Demo3-Scripting" source="x_1755685_demo3_sc">f6cc1895c3ca6a1079b2770d050131df</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Demo3-Scripting">f6cc1895c3ca6a1079b2770d050131df</sys_scope>
         <sys_update_name>sys_script_include_e40bfaf5c3ce2e1079b2770d05013168</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-11 07:25:42</sys_updated_on>
+        <sys_updated_on>2025-06-11 08:05:24</sys_updated_on>
     </sys_script_include>
 </record_update>

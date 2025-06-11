@@ -66,21 +66,21 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-11 06:49:49</sys_created_on>
         <sys_id>4308be71c3ce2e1079b2770d050131e6</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Demo3 Request</sys_name>
         <sys_package display_value="Demo3-Scripting" source="x_1755685_demo3_sc">f6cc1895c3ca6a1079b2770d050131df</sys_package>
         <sys_policy/>
         <sys_scope display_value="Demo3-Scripting">f6cc1895c3ca6a1079b2770d050131df</sys_scope>
         <sys_update_name>sc_cat_item_4308be71c3ce2e1079b2770d050131e6</sys_update_name>
-        <sys_updated_by>zhangsan.manager</sys_updated_by>
-        <sys_updated_on>2025-06-11 07:29:10</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-06-11 08:09:34</sys_updated_on>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>6</version>
+        <version>8</version>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
