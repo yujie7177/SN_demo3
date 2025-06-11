@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <cat_item display_value="Demo3 Request">4308be71c3ce2e1079b2770d050131e6</cat_item>
+        <cat_variable/>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Get Variables</name>
+        <order/>
+        <published_ref/>
+        <script><![CDATA[function onLoad() {
+    //Type appropriate comment here, and begin script below
+    var urlParams = new URLSearchParams(top.window.location.search);
+    alert('urlParams=' + urlParams);
+    var reqId = urlParams.get('reitem_id');
+    if (reqId) {
+        var ga = new GlideAjax('GetPreData');
+        ga.addParam('sysparm_name', 'getPreviousRequestData');
+        ga.addParam('sysparm_reqId', reqId);
+        ga.getXMLAnswer(function(answer) {
+            if (answer) {
+                try {
+                    var data = JSON.parse(answer);
+                    if (data.request_for) {
+                        g_form.setValue('request_for', data.request_for);
+                    }
+                    if (data.reason_1) {
+                        g_form.setValue('question1', data.question1);
+                    }
+                    if (data.reason_2) {
+                        g_form.setValue('question2', data.question2);
+                    }
+                } catch (e) {}
+            }
+        });
+    }
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-11 06:54:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6eb87235c3ce2e1079b2770d0501316c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Variables</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Demo3-Scripting" source="x_1755685_demo3_sc">f6cc1895c3ca6a1079b2770d050131df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-Scripting">f6cc1895c3ca6a1079b2770d050131df</sys_scope>
+        <sys_update_name>catalog_script_client_6eb87235c3ce2e1079b2770d0501316c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-11 06:54:02</sys_updated_on>
+        <table/>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <va_supported>false</va_supported>
+        <variable_set/>
+        <view/>
+    </catalog_script_client>
+</record_update>

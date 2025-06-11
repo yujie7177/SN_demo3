@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1755685_demo3_sc.ExcelUpdateAjax</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ExcelUpdateAjax</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ExcelUpdateAjax = Class.create();
+ExcelUpdateAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    parsingExcel: function() {
+        try {
+            var attachmentId = this.getParameter('sysparm_attachment_id');
+            var formId = this.getParameter('sysparm_form_id');
+            if (!attachmentId) return JSON.stringify([]);
+            var gr = new GlideRecord('sys_attachment');
+            if (!gr.get(attachmentId)) {
+                return "ERROR: cant find the file";
+            }
+            var attachment = new GlideSysAttachment();
+            var attachmentStream = attachment.getContentStream(attachmentId);
+            var parser = new sn_impex.GlideExcelParser();
+            parser.parse(attachmentStream);
+            var headers = parser.getColumnHeaders();
+            if (!headers || headers.length < 2) {
+                return "ERROR: 2fileds need";
+            }
+            var result = [];
+            while (parser.next()) {
+                var row = parser.getRow();
+                result.push({
+                    'question1': row[headers[0]] + '',
+                    'question2': row[headers[1]] + ''
+                });
+            }
+            return JSON.stringify(result);
+        } catch (e) {
+            return "ERROR: " + e.message;
+        }
+    },
+    type: 'ExcelUpdateAjax'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-11 06:22:43</sys_created_on>
+        <sys_id>53d1bab9c38e2e1079b2770d0501310c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>ExcelUpdateAjax</sys_name>
+        <sys_package display_value="Demo3-Scripting" source="x_1755685_demo3_sc">f6cc1895c3ca6a1079b2770d050131df</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Demo3-Scripting">f6cc1895c3ca6a1079b2770d050131df</sys_scope>
+        <sys_update_name>sys_script_include_53d1bab9c38e2e1079b2770d0501310c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-11 06:36:19</sys_updated_on>
+    </sys_script_include>
+</record_update>

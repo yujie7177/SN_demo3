@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1755685_demo3_sc.UpdateVariable</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>UpdateVariable</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var UpdateVariable = Class.create();
+UpdateVariable.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    UpdateVariable: function() {
+        try {
+            // 获取参数
+            var tableName = this.getParameter('sysparm_table');
+            var comments = this.getParameter("sysparm_variable");
+            var commentsValue = this.getParameter('sysparm_variable');
+            // 验证输入
+            if (!comments) {
+                return {
+                    error: true,
+                    message: "缺少必要的参数"
+                };
+            }
+            // 获取当前记录ID
+            var sysId = this.getParameter('sysparm_sys_id');
+            if (!sysId) {
+                return "Error: Record ID is required";
+            }
+            // 更新记录
+            var gr = new GlideRecord(tableName);
+            if (gr.get(sysId)) {
+                // 更新comments字段
+                gr.setValue('serial_number', commentsValue);
+                return gr.update() ? "success" : "Failed to update record";
+            }
+            return "Error: Record not found";
+        } catch (e) {
+            return "Error: " + e.message;
+        }
+    },
+    type: 'UpdateVariable'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-11 05:50:00</sys_created_on>
+        <sys_id>163a6231c38e2e1079b2770d050131e3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>UpdateVariable</sys_name>
+        <sys_package display_value="Demo3-Scripting" source="x_1755685_demo3_sc">f6cc1895c3ca6a1079b2770d050131df</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Demo3-Scripting">f6cc1895c3ca6a1079b2770d050131df</sys_scope>
+        <sys_update_name>sys_script_include_163a6231c38e2e1079b2770d050131e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-11 05:57:32</sys_updated_on>
+    </sys_script_include>
+</record_update>
