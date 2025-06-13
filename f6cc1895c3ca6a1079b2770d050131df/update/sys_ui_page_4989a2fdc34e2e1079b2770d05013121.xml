@@ -19,7 +19,7 @@
         if (response === 'success') {
             // 更新画面上comments字段
             if (window.parent && window.parent.g_form) {
-                g_form.setValue('x_1755581_demo3_for_scripting.comments', newCommentsValue);
+                g_form.setValue('cmdb_ci_computer.serial_number', newCommentsValue);
             }
             GlideModal.get().destroy();
         } else {
@@ -57,13 +57,13 @@ window.closeDialog = function() {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-11 05:47:53</sys_created_on>
         <sys_id>4989a2fdc34e2e1079b2770d05013121</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>my_dialog</sys_name>
         <sys_package display_value="Demo3-Scripting" source="x_1755685_demo3_sc">f6cc1895c3ca6a1079b2770d050131df</sys_package>
         <sys_policy/>
         <sys_scope display_value="Demo3-Scripting">f6cc1895c3ca6a1079b2770d050131df</sys_scope>
         <sys_update_name>sys_ui_page_4989a2fdc34e2e1079b2770d05013121</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-11 05:58:00</sys_updated_on>
+        <sys_updated_on>2025-06-12 09:14:54</sys_updated_on>
     </sys_ui_page>
 </record_update>
