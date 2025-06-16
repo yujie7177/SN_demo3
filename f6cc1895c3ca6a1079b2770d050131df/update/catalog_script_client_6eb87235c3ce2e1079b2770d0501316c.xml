@@ -51,7 +51,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6eb87235c3ce2e1079b2770d0501316c</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Get Variables</sys_name>
         <sys_overrides/>
         <sys_package display_value="Demo3-Scripting" source="x_1755685_demo3_sc">f6cc1895c3ca6a1079b2770d050131df</sys_package>
@@ -59,7 +59,7 @@
         <sys_scope display_value="Demo3-Scripting">f6cc1895c3ca6a1079b2770d050131df</sys_scope>
         <sys_update_name>catalog_script_client_6eb87235c3ce2e1079b2770d0501316c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-11 08:09:34</sys_updated_on>
+        <sys_updated_on>2025-06-13 09:22:04</sys_updated_on>
         <table/>
         <type>onLoad</type>
         <ui_type>10</ui_type>
